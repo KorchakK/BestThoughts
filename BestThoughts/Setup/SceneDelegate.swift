@@ -16,7 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ListViewController()
+        let flowLayout = UICollectionViewFlowLayout()
+        let itemSize = window.screen.bounds.width / 2.1
+        flowLayout.estimatedItemSize = CGSize(width: itemSize, height: itemSize)
+        let listVC = ListViewController(collectionViewLayout: flowLayout)
+        let navController = CustomNavController(rootViewController: listVC)
+        window.rootViewController = navController
         
         self.window = window
         window.makeKeyAndVisible()
