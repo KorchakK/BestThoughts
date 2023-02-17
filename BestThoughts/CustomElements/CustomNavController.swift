@@ -11,7 +11,7 @@ class CustomNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.backgroundColor = .lightGray
+        navigationBar.backgroundColor = .clear
         navigationBar.prefersLargeTitles = true
     }
 }
